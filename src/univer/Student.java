@@ -75,13 +75,6 @@ public class Student {
     }
     @Override
     public String toString() {
-        return "univer.Student{" +
-                "firstname='" + firstname + '\'' +
-                ", secondname='" + secondname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", numberGroup=" + numberGroup +
-                ", studenTicket=" + studenTicket +
-                ", avgMarks=" + avgMarks +
-                '}';
+        return String.format("ФИО: %s %s %s\nНомер группы: %s\nНомер студака: %s\nСредние оценка: %s",firstname,secondname,lastname,numberGroup,studenTicket,avgMarks);
     }
 }

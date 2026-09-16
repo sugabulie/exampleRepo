@@ -2,7 +2,7 @@ package univer;
 
 import java.util.ArrayList;
 
-public class StudentsGroup {
+public class StudentsGroup implements Trainees {
     private int numberGroup;
     private String facultyName;
     private int course;
@@ -57,6 +57,26 @@ public class StudentsGroup {
 
     @Override
     public String toString() {
-        return String.format("номер группы" + numberGroup +"факультет" + facultyName +"курс:" + course +"список студентов:" + listOfStudent);
+        return String.format("номер группы %s\n факультет %s\n курс %s\n список студентов %s\n",numberGroup,facultyName,course,listOfStudent);
+    }
+
+    @Override
+    public void deleteStudent(Student a) {
+        this.listOfStudent.remove(a);
+    }
+
+    @Override
+    public void addStudent(Student a) {
+    this.listOfStudent.add(a);
+    }
+
+    @Override
+    public void increaseAVGMark(Student a) {
+        for(Student cache:this.listOfStudent){
+            if(cache==a){
+                cache.setAvgMarks(cache.getAvgMarks()+1);
+                return;
+            }
+        }
     }
 }
